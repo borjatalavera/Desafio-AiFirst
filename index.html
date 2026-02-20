@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Lead Engine | Control Center</title>
+    <meta name="description"
+        content="AI-First lead generation and automation dashboard for high-performance sales teams.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">A</div>
+
+            <nav class="nav-links">
+                <div class="nav-item" title="Dashboard">
+                    <i data-lucide="layout-dashboard"></i>
+                </div>
+                <div class="nav-item active" title="Leads">
+                    <i data-lucide="users"></i>
+                </div>
+                <div class="nav-item" title="Automations">
+                    <i data-lucide="zap"></i>
+                </div>
+                <div class="nav-item" title="Settings">
+                    <i data-lucide="settings"></i>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <div class="pulse"></div>
+                    <span>AI Agents: Online</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-title">
+                <h1>AI-Lead Engine <span class="accent">|</span> Control Center</h1>
+            </div>
+            <div class="header-actions">
+                <div class="response-widget">
+                    <span>Lead Response Time: 45s</span>
+                    <i data-lucide="zap" style="width: 14px;"></i>
+                </div>
+                <button id="btn-simulate" class="btn-simulate">
+                    <i data-lucide="zap"></i> Simular Inbound Lead
+                </button>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT - LEAD FEED -->
+        <main class="main-content">
+            <header class="section-header">
+                <h2 class="section-title">
+                    <i data-lucide="list"></i> Qualified Leads Feed
+                </h2>
+            </header>
+
+            <div class="lead-feed">
+                <!-- Lead Card 1 -->
+                <article class="lead-card">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Lucia" alt="Lucia Torres"
+                        class="lead-avatar">
+                    <div class="lead-info">
+                        <div class="lead-header">
+                            <div class="lead-name">
+                                <h3>Lucía Torres</h3>
+                                <p>VP of Sales en GlobalTech</p>
+                            </div>
+                            <div class="score-badge">
+                                <span class="score-val">98</span>
+                                <span class="score-total">/100</span>
+                            </div>
+                        </div>
+                        <div class="insight-box">
+                            <strong>AI Insight</strong>
+                            <p>Recién anunciaron expansión a México. Nuestra solución resuelve su actual cuello de
+                                botella en logística.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-slack" title="Push to Slack">
+                                <i data-lucide="slack"></i>
+                            </button>
+                            <button class="btn-draft">
+                                <i data-lucide="mail"></i> Draft AI Email
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lead Card 2 -->
+                <article class="lead-card">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Marco" alt="Marco Rossi"
+                        class="lead-avatar">
+                    <div class="lead-info">
+                        <div class="lead-header">
+                            <div class="lead-name">
+                                <h3>Marco Rossi</h3>
+                                <p>CTO en DataFlow Systems</p>
+                            </div>
+                            <div class="score-badge" style="border-color: #f59e0b;">
+                                <span class="score-val">85</span>
+                                <span class="score-total">/100</span>
+                            </div>
+                        </div>
+                        <div class="insight-box">
+                            <strong>AI Insight</strong>
+                            <p>Buscando activamente optimizar costos de infraestructura en la nube. Han publicado 3
+                                vacantes para DevOps Senior.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-slack" title="Push to Slack">
+                                <i data-lucide="slack"></i>
+                            </button>
+                            <button class="btn-draft">
+                                <i data-lucide="mail"></i> Draft AI Email
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Lead Card 3 -->
+                <article class="lead-card">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Elena" alt="Elena Smith"
+                        class="lead-avatar">
+                    <div class="lead-info">
+                        <div class="lead-header">
+                            <div class="lead-name">
+                                <h3>Elena Smith</h3>
+                                <p>Head of Operations en CloudNexus</p>
+                            </div>
+                            <div class="score-badge">
+                                <span class="score-val">94</span>
+                                <span class="score-total">/100</span>
+                            </div>
+                        </div>
+                        <div class="insight-box">
+                            <strong>AI Insight</strong>
+                            <p>Asistió recientemente al webinar de "Automatización 2024". Su empresa incrementó su
+                                presupuesto de IT en un 25%.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-slack" title="Push to Slack">
+                                <i data-lucide="slack"></i>
+                            </button>
+                            <button class="btn-draft">
+                                <i data-lucide="mail"></i> Draft AI Email
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+
+        <aside class="execution-log">
+            <div class="terminal-header">
+                <i data-lucide="terminal" style="width: 14px;"></i>
+                Real-time Execution
+            </div>
+            <div class="log-filters">
+                <span class="filter-tag active" data-filter="all">All Events</span>
+                <span class="filter-tag" data-filter="search">Search Agent</span>
+                <span class="filter-tag" data-filter="scoring">Scoring Agent</span>
+                <span class="filter-tag" data-filter="writer">Writer Agent</span>
+            </div>
+            <div class="log-content" id="terminal-content">
+                <!-- Logs will be populated by JS -->
+            </div>
+        </aside>
+
+        <footer class="impact-dashboard">
+            <div class="stat-card productivity">
+                <span class="stat-label">Productivity Gain</span>
+                <div class="comparison-bar">
+                    <div class="manual-segment">Manual: 4hs/día</div>
+                    <div class="ai-segment-glow">AI Agents: 5min</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">ROI Operativo</span>
+                <div class="stat-content">
+                    <span class="stat-value up">+300%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Conversión Proyectada</span>
+                <div class="stat-content">
+                    <span class="stat-value" style="color: var(--accent-violet);">40%</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- EMAIL MODAL -->
+    <div id="email-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i data-lucide="sparkles"></i>
+                    AI Generated Draft
+                </div>
+                <button class="btn-close-modal" id="close-modal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="email-metadata">
+                    <div class="meta-row"><strong>To:</strong> <span id="email-to">lucia.torres@globaltech.com</span>
+                    </div>
+                    <div class="meta-row"><strong>Subject:</strong> <span id="email-subject">Propuesta Estratégica:
+                            Expansión GlobalTech México</span></div>
+                </div>
+                <div class="email-text-area" id="email-body">
+                    <!-- Email content will be inserted here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div style="flex: 1"></div>
+                <button class="btn-secondary" id="btn-copy">
+                    <i data-lucide="copy"></i> Copy
+                </button>
+                <button class="btn-primary">
+                    <i data-lucide="send"></i> Send via CRM
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
