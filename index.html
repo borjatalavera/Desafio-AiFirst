@@ -29,18 +29,18 @@
             <div class="logo">A</div>
 
             <nav class="nav-links">
-                <div class="nav-item" title="Dashboard">
-                    <i data-lucide="layout-dashboard"></i>
-                </div>
-                <div class="nav-item active" title="Leads">
+                <a href="index.html" class="nav-item active" title="Leads">
                     <i data-lucide="users"></i>
-                </div>
-                <div class="nav-item" title="Automations">
+                </a>
+                <a href="retention.html" class="nav-item" title="Retention Engine">
+                    <i data-lucide="refresh-cw"></i>
+                </a>
+                <a href="#" class="nav-item" title="Automations">
                     <i data-lucide="zap"></i>
-                </div>
-                <div class="nav-item" title="Settings">
+                </a>
+                <a href="#" class="nav-item" title="Settings">
                     <i data-lucide="settings"></i>
-                </div>
+                </a>
             </nav>
 
             <div class="sidebar-footer">
@@ -71,7 +71,64 @@
         <main class="main-content">
             <header class="section-header">
                 <h2 class="section-title">
-                    <i data-lucide="list"></i> Qualified Leads Feed
+                    <i data-lucide="zap"></i> AI Proactive Discovery Radar
+                </h2>
+            </header>
+
+            <section class="discovery-radar">
+                <div class="radar-header">
+                    <div class="radar-title">
+                        <i data-lucide="globe" style="color: var(--accent-violet);"></i>
+                        <h3>Global Market Pulse</h3>
+                        <div class="status-badge green"
+                            style="background: none; border: none; font-size: 9px; animation: pulse 2s infinite;">Live
+                            Scanning</div>
+                    </div>
+                    <div class="radar-stats" style="font-size: 11px; color: var(--text-secondary);">
+                        Sources: <span style="color: var(--accent-violet);">News, LinkedIn, SEC Filings</span>
+                    </div>
+                </div>
+                <div class="radar-content">
+                    <div class="news-ticker-container">
+                        <div class="news-ticker" id="news-ticker">
+                            <div class="news-item">
+                                <span class="time">[13:50]</span>
+                                <span class="source">Crunchbase:</span>
+                                <span>FinTech Corp recauda $50M Serie B...</span>
+                            </div>
+                            <div class="news-item">
+                                <span class="time">[13:52]</span>
+                                <span class="source">Reuters:</span>
+                                <span>Expansión masiva de e-commerce en LATAM...</span>
+                            </div>
+                            <div class="news-item">
+                                <span class="time">[13:54]</span>
+                                <span class="source">TechCrunch:</span>
+                                <span>Brecha de seguridad detectada en competidor X...</span>
+                            </div>
+                            <div class="news-item">
+                                <span class="time">[13:55]</span>
+                                <span class="source">LinkedIn:</span>
+                                <span>Vero Tech busca VP de Sales en España...</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-found-container" id="match-container">
+                        <div class="match-card-mini">
+                            <i data-lucide="target" style="color: var(--accent-emerald);"></i>
+                            <div class="match-info-mini">
+                                <h4>Vero Tech Matched</h4>
+                                <p>Signal: Expansion / Hiring</p>
+                            </div>
+                            <button class="btn-reveal-lead">Show Lead</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <header class="section-header">
+                <h2 class="section-title">
+                    <i data-lucide="list"></i> High-Intent Leads Feed
                 </h2>
             </header>
 

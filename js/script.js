@@ -225,8 +225,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    logMessages.forEach((log, i) => {
-        setTimeout(() => addLogEntry(log), i * 1000);
-    });
+    // PROACTIVE SEARCH AGENT LOGIC
+    const ticker = document.getElementById('news-ticker');
+    const matchContainer = document.getElementById('match-container');
+    const newsData = [
+        { time: '14:05', source: 'Bloomber:', msg: 'E-com growth in Mexico rises 20%' },
+        { time: '14:07', source: 'SecurNews:', msg: 'Data breach in Logistic Systems' },
+        { time: '14:10', source: 'Yahoo Fin:', msg: 'Solar Energy Co expansion to US' },
+        { time: '14:12', source: 'LinkedIn:', msg: 'Growth Lead hiring at SolarTech' }
+    ];
+
+    function updateTicker() {
+        const now = new Date();
+        const item = newsData[Math.floor(Math.random() * newsData.length)];
+        const lastTime = now.getHours() + ':' + now.getMinutes().toString().padStart(2, '0');
+
+        const div = document.createElement('div');
+        div.className = 'news-item';
+        div.innerHTML = `
+            <span class="time">[${lastTime}]</span>
+            <span class="source">${item.source}</span>
+            <span>${item.msg}</span>
+        `;
+        ticker.prepend(div);
+        if (ticker.children.length > 6) ticker.removeChild(ticker.lastChild);
+    }
+
+    setInterval(updateTicker, 4000);
+
+    const matchTemplates = [
+        { name: 'Solar Energy Co', signal: 'US Expansion detected' },
+        { name: 'Mexico-Ecom', signal: 'Volume Increase Detected' },
+        { name: 'FinTech Corp', signal: 'Serie B Funding Closed' }
+    ];
+
+    function discoverNewMatch() {
+        const match = matchTemplates[Math.floor(Math.random() * matchTemplates.length)];
+        matchContainer.innerHTML = `
+            <div class="match-card-mini" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.2);">
+                <i data-lucide="sparkles" style="color: var(--accent-violet);"></i>
+                <div class="match-info-mini">
+                    <h4>${match.name} Found</h4>
+                    <p>Signal: ${match.signal}</p>
+                </div>
+                <button class="btn-reveal-lead" style="background: var(--accent-violet); color: white;">Review</button>
+            </div>
+        `;
+        lucide.createIcons();
+    }
+
+    setInterval(discoverNewMatch, 10000);
+
     bindLeadButtons();
 });

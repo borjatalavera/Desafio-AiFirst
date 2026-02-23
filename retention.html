@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Retention Engine | Account Monitoring</title>
+    <meta name="description" content="AI-First retention and churn prediction dashboard for account managers.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .health-score {
+            border-color: var(--accent-color, var(--accent-violet)) !important;
+            background: rgba(var(--accent-rgb, 139, 92, 146), 0.05) !important;
+            box-shadow: 0 0 20px rgba(var(--accent-rgb, 139, 92, 146), 0.2), inset 0 0 10px rgba(var(--accent-rgb, 139, 92, 146), 0.1) !important;
+        }
+
+        .health-score .score-val {
+            color: var(--accent-color, #fff) !important;
+        }
+
+        .btn-proactive {
+            background: var(--accent-violet);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-proactive:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">A</div>
+
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item" title="Leads">
+                    <i data-lucide="users"></i>
+                </a>
+                <a href="retention.html" class="nav-item active" title="Retention Engine">
+                    <i data-lucide="refresh-cw"></i>
+                </a>
+                <a href="#" class="nav-item" title="Automations">
+                    <i data-lucide="zap"></i>
+                </a>
+                <a href="#" class="nav-item" title="Settings">
+                    <i data-lucide="settings"></i>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <div class="pulse"></div>
+                    <span>AI Agents: Online</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-title">
+                <h1>AI-Retention Engine <span class="accent">|</span> Account Monitoring</h1>
+            </div>
+            <div class="header-actions">
+                <div class="response-widget">
+                    <span>Tasa de Churn Proyectada: 2.1%</span>
+                    <i data-lucide="trending-down" style="width: 14px;"></i>
+                </div>
+                <button id="btn-simulate" class="btn-simulate"
+                    style="box-shadow: 0 0 30px rgba(139, 92, 246, 0.6); border: 1px solid rgba(255,255,255,0.2);">
+                    <i data-lucide="fast-forward"></i> SIMULAR MID-TERM CHECK
+                </button>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT - SMART ACCOUNTS FEED -->
+        <main class="main-content">
+            <header class="section-header">
+                <h2 class="section-title">
+                    <i data-lucide="heart-pulse"></i> Smart Accounts Feed
+                </h2>
+            </header>
+
+            <div class="lead-feed">
+                <!-- Card 1 - Upsell Oportunidty -->
+                <article class="lead-card">
+                    <div class="account-icon"
+                        style="width: 64px; height: 64px; border-radius: 18px; border: 2px solid var(--border-color); background: #1a1a1a; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+                        🏢
+                    </div>
+                    <div class="lead-info">
+                        <div class="lead-header">
+                            <div class="lead-name">
+                                <h3>TechCorp Inc.</h3>
+                                <p>Plan Basic</p>
+                                <div style="margin-top: 8px;">
+                                    <span class="status-badge green">Renovación en 90 días</span>
+                                </div>
+                            </div>
+                            <div class="score-badge health-score"
+                                style="--accent-color: #10B981; --accent-rgb: 16, 185, 129;">
+                                <span class="score-val">95</span>
+                                <span class="score-total">/100</span>
+                            </div>
+                        </div>
+                        <div class="telemetry-spark" style="margin-bottom: 12px;">
+                            <span
+                                style="font-size: 10px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Usage
+                                Telemetry (Last 30d)</span>
+                            <div class="sparkline-container">
+                                <div class="spark-bar" style="height: 40%;"></div>
+                                <div class="spark-bar" style="height: 55%;"></div>
+                                <div class="spark-bar" style="height: 45%;"></div>
+                                <div class="spark-bar" style="height: 70%;"></div>
+                                <div class="spark-bar" style="height: 65%;"></div>
+                                <div class="spark-bar" style="height: 90%;"></div>
+                                <div class="spark-bar" style="height: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="insight-box">
+                            <strong>AI Insight</strong>
+                            <p>Uso intensivo detectado. Consumieron el 90% de su cuota mensual y resolvieron 2 tickets.
+                                Escenario ideal para ofrecer el Plan Pro.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-proactive">
+                                <i data-lucide="zap"></i> [⚡ Draft Proactive Upsell]
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 - Churn Risk -->
+                <article class="lead-card">
+                    <div class="account-icon"
+                        style="width: 64px; height: 64px; border-radius: 18px; border: 2px solid var(--border-color); background: #1a1a1a; display: flex; align-items: center; justify-content: center; font-size: 24px;">
+                        🌐
+                    </div>
+                    <div class="lead-info">
+                        <div class="lead-header">
+                            <div class="lead-name">
+                                <h3>Global Logistics</h3>
+                                <p>Plan Pro</p>
+                                <div style="margin-top: 8px;">
+                                    <span class="status-badge amber">Mid-Term Check (Mes 6)</span>
+                                </div>
+                            </div>
+                            <div class="score-badge health-score"
+                                style="--accent-color: #F59E0B; --accent-rgb: 245, 158, 11;">
+                                <span class="score-val" style="color: #F59E0B;">40</span>
+                                <span class="score-total">/100</span>
+                            </div>
+                        </div>
+                        <div class="telemetry-spark" style="margin-bottom: 12px;">
+                            <span
+                                style="font-size: 10px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Activity
+                                Trend (Last 30d)</span>
+                            <div class="sparkline-container">
+                                <div class="spark-bar" style="height: 80%;"></div>
+                                <div class="spark-bar" style="height: 75%;"></div>
+                                <div class="spark-bar" style="height: 85%;"></div>
+                                <div class="spark-bar down" style="height: 50%;"></div>
+                                <div class="spark-bar down" style="height: 45%;"></div>
+                                <div class="spark-bar down" style="height: 30%;"></div>
+                                <div class="spark-bar down" style="height: 20%;"></div>
+                            </div>
+                        </div>
+                        <div class="insight-box" style="border-left-color: var(--accent-amber);">
+                            <strong style="color: var(--accent-amber);">AI Insight</strong>
+                            <p>Alerta temprana: La actividad de inicio de sesión bajó un 40% este mes. Riesgo de Churn
+                                alto.</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-proactive">
+                                <i data-lucide="file-text"></i> [📝 Draft Mid-Term Check & Value Report]
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- REAL-TIME EXECUTION LOG -->
+        <aside class="execution-log">
+            <div class="terminal-header">
+                <i data-lucide="terminal" style="width: 14px;"></i>
+                Real-time Execution
+            </div>
+            <div class="log-filters">
+                <span class="filter-tag active" data-filter="all">All Events</span>
+                <span class="filter-tag" data-filter="make">Make.com</span>
+                <span class="filter-tag" data-filter="ocr">AI OCR</span>
+                <span class="filter-tag" data-filter="hubspot">HubSpot Sync</span>
+                <span class="filter-tag" data-filter="gpt">GPT-4o</span>
+            </div>
+            <div class="log-content" id="terminal-content">
+                <!-- Logs will be populated by JS -->
+            </div>
+        </aside>
+
+        <!-- IMPACT DASHBOARD -->
+        <footer class="impact-dashboard">
+            <div class="stat-card">
+                <span class="stat-label">Revisión de Cuentas</span>
+                <div class="comparison-bar">
+                    <div class="manual-segment">4hs manual</div>
+                    <div class="ai-segment-glow">15min/sem</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Tasa de Respuesta</span>
+                <div class="stat-content">
+                    <span class="stat-value up">45%</span>
+                    <p style="font-size: 11px; color: var(--text-secondary); margin-top: 5px;">Engagement proactivo</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">CICLO DE RENOVACIÓN</span>
+                <div class="stat-content">
+                    <span class="stat-value" style="color: var(--accent-violet);">60-90 Días</span>
+                    <p style="font-size: 11px; color: var(--text-secondary); margin-top: 5px;">(Antes: Últimos 15 días)
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- EMAIL MODAL -->
+    <div id="email-modal" class="modal-overlay">
+        <div class="modal-content glass" style="border-color: var(--accent-violet);">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <i data-lucide="sparkles"></i>
+                    AI Draft Editor
+                </div>
+                <div class="score-badge"
+                    style="width: auto; height: auto; padding: 4px 12px; border-radius: 20px; font-size: 11px; flex-direction: row; gap: 4px; border-width: 1px;">
+                    <span class="score-total" style="color: var(--accent-emerald);">AI Confidence:</span>
+                    <span class="score-val" id="modal-confidence" style="font-size: 11px;">98%</span>
+                </div>
+                <button class="btn-close-modal" id="close-modal">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="email-metadata"
+                    style="background: rgba(139, 92, 246, 0.05); border-color: rgba(139, 92, 246, 0.2);">
+                    <div class="meta-row"><strong>To:</strong> <span id="email-to">cto@techcorp.com</span></div>
+                    <div class="meta-row"><strong>Subject:</strong> <span id="email-subject">Propuesta...</span></div>
+                </div>
+                <textarea class="email-text-area" id="email-body"
+                    style="width: 100%; background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; color: #cbd5e1; font-family: inherit; font-size: 14px; line-height: 1.6; resize: vertical; min-height: 200px; outline: none;"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="btn-cancel-modal">
+                    Cancelar
+                </button>
+                <button class="btn-primary"
+                    style="background: var(--accent-emerald); box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);">
+                    <i data-lucide="rocket"></i> Approve & Send
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/retention.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
